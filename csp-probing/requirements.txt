@@ -1,0 +1,4 @@
+requests
+click
+tldextract
+whois

@@ -1,0 +1,268 @@
+[
+    {
+        "domain": "fbsbx.com",
+        "apex_domain": "fbsbx.com",
+        "ip": "157.240.16.35",
+        "raw_csp_url": "fbsbx.com",
+        "available": false
+    },
+    {
+        "domain": "facebook.com",
+        "apex_domain": "facebook.com",
+        "ip": "157.240.16.35",
+        "raw_csp_url": "facebook.com",
+        "available": false
+    },
+    {
+        "domain": "fbcdn.net",
+        "apex_domain": "fbcdn.net",
+        "ip": "157.240.16.35",
+        "raw_csp_url": "fbcdn.net",
+        "available": false
+    },
+    {
+        "domain": "facebook.net",
+        "apex_domain": "facebook.net",
+        "ip": null,
+        "raw_csp_url": "facebook.net",
+        "available": false
+    },
+    {
+        "domain": "127.0.0.1",
+        "apex_domain": "127.0.0.1.",
+        "ip": "127.0.0.1",
+        "raw_csp_url": "127.0.0.1",
+        "available": false
+    },
+    {
+        "domain": "connect.facebook.net",
+        "apex_domain": "facebook.net",
+        "ip": "157.240.16.20",
+        "raw_csp_url": "connect.facebook.net",
+        "available": false
+    },
+    {
+        "domain": "googletagmanager.com",
+        "apex_domain": "googletagmanager.com",
+        "ip": "142.250.76.168",
+        "raw_csp_url": "googletagmanager.com",
+        "available": false
+    },
+    {
+        "domain": "google-analytics.com",
+        "apex_domain": "google-analytics.com",
+        "ip": "142.250.199.132",
+        "raw_csp_url": "google-analytics.com",
+        "available": false
+    },
+    {
+        "domain": "translate.google.com",
+        "apex_domain": "google.com",
+        "ip": "142.250.192.142",
+        "raw_csp_url": "translate.google.com",
+        "available": false
+    },
+    {
+        "domain": "google.com",
+        "apex_domain": "google.com",
+        "ip": "142.250.183.174",
+        "raw_csp_url": "google.com",
+        "available": false
+    },
+    {
+        "domain": "fonts.googleapis.com",
+        "apex_domain": "googleapis.com",
+        "ip": "142.250.183.10",
+        "raw_csp_url": "fonts.googleapis.com",
+        "available": false
+    },
+    {
+        "domain": "whatsapp.com",
+        "apex_domain": "whatsapp.com",
+        "ip": "157.240.16.52",
+        "raw_csp_url": "whatsapp.com",
+        "available": false
+    },
+    {
+        "domain": "attachment.fbsbx.com",
+        "apex_domain": "fbsbx.com",
+        "ip": "157.240.16.16",
+        "raw_csp_url": "attachment.fbsbx.com",
+        "available": false
+    },
+    {
+        "domain": "cdninstagram.com",
+        "apex_domain": "cdninstagram.com",
+        "ip": null,
+        "raw_csp_url": "cdninstagram.com",
+        "available": false
+    },
+    {
+        "domain": "gateway.facebook.com",
+        "apex_domain": "facebook.com",
+        "ip": "157.240.16.2",
+        "raw_csp_url": "gateway.facebook.com",
+        "available": false
+    },
+    {
+        "domain": "edge-chat.facebook.com",
+        "apex_domain": "facebook.com",
+        "ip": "157.240.16.16",
+        "raw_csp_url": "edge-chat.facebook.com",
+        "available": false
+    },
+    {
+        "domain": "snaptu-d.facebook.com",
+        "apex_domain": "facebook.com",
+        "ip": "157.240.16.22",
+        "raw_csp_url": "snaptu-d.facebook.com",
+        "available": false
+    },
+    {
+        "domain": "kaios-d.facebook.com",
+        "apex_domain": "facebook.com",
+        "ip": "157.240.16.22",
+        "raw_csp_url": "kaios-d.facebook.com",
+        "available": false
+    },
+    {
+        "domain": "v.whatsapp.net",
+        "apex_domain": "whatsapp.net",
+        "ip": "157.240.16.52",
+        "raw_csp_url": "v.whatsapp.net",
+        "available": false
+    },
+    {
+        "domain": "fb.com",
+        "apex_domain": "fb.com",
+        "ip": "157.240.16.35",
+        "raw_csp_url": "fb.com",
+        "available": false
+    },
+    {
+        "domain": "analytics.google.com",
+        "apex_domain": "google.com",
+        "ip": "216.239.34.181",
+        "raw_csp_url": "analytics.google.com",
+        "available": false
+    },
+    {
+        "domain": "stats.g.doubleclick.net",
+        "apex_domain": "doubleclick.net",
+        "ip": "64.233.170.156",
+        "raw_csp_url": "stats.g.doubleclick.net",
+        "available": false
+    },
+    {
+        "domain": "fonts.gstatic.com",
+        "apex_domain": "gstatic.com",
+        "ip": "216.58.203.35",
+        "raw_csp_url": "fonts.gstatic.com",
+        "available": false
+    },
+    {
+        "domain": "carriersignal.info",
+        "apex_domain": "carriersignal.info",
+        "ip": "52.38.114.247",
+        "raw_csp_url": "carriersignal.info",
+        "available": false
+    },
+    {
+        "domain": "whatsapp.net",
+        "apex_domain": "whatsapp.net",
+        "ip": "157.240.16.52",
+        "raw_csp_url": "whatsapp.net",
+        "available": false
+    },
+    {
+        "domain": "oculuscdn.com",
+        "apex_domain": "oculuscdn.com",
+        "ip": null,
+        "raw_csp_url": "oculuscdn.com",
+        "available": false
+    },
+    {
+        "domain": "googleadservices.com",
+        "apex_domain": "googleadservices.com",
+        "ip": "142.251.42.66",
+        "raw_csp_url": "googleadservices.com",
+        "available": false
+    },
+    {
+        "domain": "googleads.g.doubleclick.net",
+        "apex_domain": "doubleclick.net",
+        "ip": "142.250.192.34",
+        "raw_csp_url": "googleads.g.doubleclick.net",
+        "available": false
+    },
+    {
+        "domain": "doubleclick.net",
+        "apex_domain": "doubleclick.net",
+        "ip": "142.250.183.110",
+        "raw_csp_url": "doubleclick.net",
+        "available": false
+    },
+    {
+        "domain": "tenor.co",
+        "apex_domain": "tenor.co",
+        "ip": "34.120.13.18",
+        "raw_csp_url": "tenor.co",
+        "available": false
+    },
+    {
+        "domain": "tenor.com",
+        "apex_domain": "tenor.com",
+        "ip": "34.120.13.18",
+        "raw_csp_url": "tenor.com",
+        "available": false
+    },
+    {
+        "domain": "giphy.com",
+        "apex_domain": "giphy.com",
+        "ip": "151.101.129.91",
+        "raw_csp_url": "giphy.com",
+        "available": false
+    },
+    {
+        "domain": "paywithmybank.com",
+        "apex_domain": "paywithmybank.com",
+        "ip": "50.112.153.33",
+        "raw_csp_url": "paywithmybank.com",
+        "available": false
+    },
+    {
+        "domain": "dc.ads.linkedin.com",
+        "apex_domain": "linkedin.com",
+        "ip": "13.107.42.14",
+        "raw_csp_url": "dc.ads.linkedin.com",
+        "available": false
+    },
+    {
+        "domain": "analytics.twitter.com",
+        "apex_domain": "twitter.com",
+        "ip": "104.244.42.3",
+        "raw_csp_url": "analytics.twitter.com",
+        "available": false
+    },
+    {
+        "domain": "t.co",
+        "apex_domain": "t.co",
+        "ip": "162.159.140.229",
+        "raw_csp_url": "t.co",
+        "available": false
+    },
+    {
+        "domain": "instagram.com",
+        "apex_domain": "instagram.com",
+        "ip": "157.240.16.174",
+        "raw_csp_url": "instagram.com",
+        "available": false
+    },
+    {
+        "domain": "td.doubleclick.net",
+        "apex_domain": "doubleclick.net",
+        "ip": "142.250.77.66",
+        "raw_csp_url": "td.doubleclick.net",
+        "available": false
+    }
+]
