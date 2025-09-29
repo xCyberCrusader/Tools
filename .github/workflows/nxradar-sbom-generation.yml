@@ -1,0 +1,80 @@
+name: NXRadar SBOM Generation - 2025-09-29
+on:
+  workflow_dispatch:  # Manual trigger only
+jobs:
+  generate-sbom:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0  # Full history for better SBOM accuracy
+      - name: Set NXRadar Environment Variables
+        run: |
+          echo "UPLOAD_SERVER_URL=https://demo.nxradar.com/upload" >> $GITHUB_ENV
+          echo "NXRADAR_ORG_ID=Un9WssLAvp" >> $GITHUB_ENV
+          echo "NXRADAR_API_TOKEN=temp_68da19e7b573ac521e7af1e9_1759124180358_72sqajnbxr2" >> $GITHUB_ENV
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          format: "cyclonedx-json"
+          output-file: "sbom.json"
+          upload-artifact: true
+          artifact-name: "sbom-main-${{ github.sha }}"
+          include-dev-deps: true
+      - name: Download and Extract SBOM
+        uses: actions/download-artifact@v4
+        with:
+          name: sbom-main-${{ github.sha }}
+          path: ./sbom-artifact
+      - name: Upload SBOM to NXRadar
+        run: |
+          # Find the SBOM file in the extracted artifact (might not have .json extension)
+          SBOM_FILE=$(find ./sbom-artifact -type f | head -1)
+          if [ -z "$SBOM_FILE" ]; then
+            echo "No file found in artifact"
+            exit 1
+          fi
+          echo "Found SBOM file: $SBOM_FILE"
+          # Rename to .json extension for proper file type detection
+          mv "$SBOM_FILE" "./sbom.json"
+          echo "Renamed to: ./sbom.json"
+          echo "Uploading SBOM to: $UPLOAD_SERVER_URL/api/v1/sbom/upload/github"
+          echo "Organization ID: $NXRADAR_ORG_ID"
+          curl -X POST "$UPLOAD_SERVER_URL/api/v1/sbom/upload/github" \
+            -H "Authorization: Bearer $NXRADAR_API_TOKEN" \
+            -H "Content-Type: multipart/form-data" \
+            -F "file=@./sbom.json" \
+            -F "applicationId=68da19e7b573ac521e7af1e9" \
+            -F "clientId=688bd33f2d3e85fbe5b9f182" \
+            -F "repository=${{ github.repository }}" \
+            -F "branch=${{ github.ref_name }}" \
+            -F "commit=${{ github.sha }}" \
+            -F "format=cyclonedx-json" \
+            -F "organizationId=$NXRADAR_ORG_ID"
+      - name: Notify NXRadar on Success
+        if: success()
+        run: |
+          echo "Sending success webhook to: $UPLOAD_SERVER_URL/api/v1/sbom/github/webhook/success"
+          curl -X POST "$UPLOAD_SERVER_URL/api/v1/sbom/github/webhook/success" \
+            -H "Authorization: Bearer $NXRADAR_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"repository\": \"${{ github.repository }}\", \"workflow_run_id\": \"${{ github.run_id }}\", \"status\": \"success\", \"applicationId\": \"68da19e7b573ac521e7af1e9\", \"organizationId\": \"$NXRADAR_ORG_ID\", \"sbom_file\": \"sbom.json\"}"
+      - name: Notify NXRadar on Failure
+        if: failure()
+        run: |
+          echo "Sending failure webhook to: $UPLOAD_SERVER_URL/api/v1/sbom/github/webhook/failure"
+          curl -X POST "$UPLOAD_SERVER_URL/api/v1/sbom/github/webhook/failure" \
+            -H "Authorization: Bearer $NXRADAR_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"repository\": \"${{ github.repository }}\", \"workflow_run_id\": \"${{ github.run_id }}\", \"status\": \"failure\", \"applicationId\": \"68da19e7b573ac521e7af1e9\", \"organizationId\": \"$NXRADAR_ORG_ID\"}"
+      - name: Cleanup - Remove Workflow
+        if: always()
+        run: |
+          # This step will be handled by our cleanup function
+          echo "Workflow execution completed - cleanup will be handled by NXRadar service"
